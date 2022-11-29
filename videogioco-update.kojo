@@ -30,9 +30,14 @@ def togliVita {
   contVit(cPos).erase()
   if(cPos == 0) {
     stopAnimation()
-    print("hai perso, riprova")
+    draw(lose)
   }
 }
+//come fare la scritta per la vittoria e per la sconfitta
+val win = Picture text("hai vinto",40)
+win.setPenColor(purple)
+val lose = Picture.text("hai perso", 40)
+lose.setPenColor(orange)
 //come fare il punteggio
 var punteggio = 0
 timer(2000){
@@ -41,7 +46,7 @@ timer(2000){
 }
 if(punteggio == 100){
   stopAnimation()
-  print("hai vinto")
+  draw(win)
 }
 
 val nPunti = Picture.textu(punteggio,30)
@@ -67,7 +72,7 @@ def pallaGialla = {
 }
 //implementiamole 
 val cannoneGiallo = HashSet.empty[Picture]
-timer(30000){
+timer(15000){
   val z = pallaGialla
   z.setPosition(cb.x + 300, cb.y + 20)
   z.setHeading(random(1,180))
