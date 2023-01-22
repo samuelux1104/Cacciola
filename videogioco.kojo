@@ -48,7 +48,10 @@ if(punteggio == 100){
   stopAnimation()
   draw(win)
 }
-
+if(punteggio > 100){
+  stopAnimation()
+  draw(win)
+}
 val nPunti = Picture.textu(punteggio,30)
     nPunti.translate(cb.x + cb.width - 40, cb.y + cb.height - 350)
     nPunti.setPenColor(green)
@@ -291,4 +294,3 @@ ostacoli.foreach { b =>
     }
   }
 }
-
